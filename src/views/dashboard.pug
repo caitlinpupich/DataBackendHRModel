@@ -1,0 +1,37 @@
+extends layouts/main-layout
+
+block content
+  h1 Admin Dashboard
+  //- Use a conditional check for the username in case you access it directly
+  if user
+    p Hello, #{user.username}! Manage your organization's staff here.
+  else
+    p Welcome to the Admin Dashboard.
+  
+  hr
+  
+  h2 Quick Actions
+  ul
+    li: a(href="/directory") View Full Directory
+  
+  hr
+
+  .container(style="margin-left: 0; padding: 20px; border: 1px solid #eee;")
+    h2 Add New Employee
+    form(action="/employees/add", method="POST")
+      div
+        label Name
+        input(type="text", name="name", required)
+      div
+        label Department
+        select(name="department")
+          each dept in departments
+            option(value=dept) #{dept}
+      div
+        label Email
+        input(type="email", name="email", required)
+      div
+        label Phone
+        input(type="text", name="phone", required)
+      
+      button(type="submit", style="background-color: #27ae60; color: white; border: none; padding: 10px 20px; border-radius: 4px; cursor: pointer;") Add Employee
