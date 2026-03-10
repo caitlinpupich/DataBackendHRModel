@@ -1,0 +1,22 @@
+{
+  "name": "aa.module5_courseendproject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress open",
+    "start": "node server.js",
+    "test:server": "powershell -Command \"$env:NODE_ENV='test'; node server.js\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "express": "^5.2.1",
+    "pug": "^3.0.3"
+  },
+  "devDependencies": {
+    "cypress": "^15.11.0"
+  }
+}
